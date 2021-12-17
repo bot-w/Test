@@ -23,7 +23,7 @@ jobs:
             owner: context.repo.owner,
             per_page: 100,
             repo: context.repo.repo,
-            branch: process.env.GITHUB_REF.
+            branch: process.env.GITHUB_REF,
             status: 'cancelled',
           });
 
