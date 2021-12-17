@@ -1,13 +1,13 @@
 
 name: Delete
-on:
-  workflow_dispatch:
-    inputs:
-      days:
-        description: 'Delete older than the number of days.'
-        required: true
-        type: number
-        default: 90
+on: [ push ]
+  # workflow_dispatch:
+  #   inputs:
+  #     days:
+  #       description: 'Delete older than the number of days.'
+  #       required: true
+  #       type: number
+  #       default: 90
 
 jobs:
   del_runs:
@@ -18,4 +18,4 @@ jobs:
         with:
           token: ${{ secrets.PRIVATE_TOKEN }}
           repository: ${{ github.repository }}
-          retain_days: ${{ github.event.inputs.days }}
+          retain_days: 2
